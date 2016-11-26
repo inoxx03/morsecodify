@@ -53,19 +53,29 @@ while True:
   except ValueError:
       print ("Invalid option!")
 
+while True:
 # make this go back to taking input if no valid input is given
-if m0 == 'c':
-  msg = input("Input Text: ")
-  morse = morsecodify(msg)
-  print("Your Message in Morse Code:")
-  print("/MSG START/ " + morse + "/MSG END/")
-elif m0 == 'e':
-  print('Bye!')
-  # give option to clear screen
-  exit()
-else:
-  print(m0 + " is not a valid option!")
-  m0 = input("Select a valid option: ")
+  if m0 == 'c':
+    msg = input("Input Text: ")
+    morse = morsecodify(msg)
+    print("Your Message in Morse Code:")
+    print("/MSG START/ " + morse + "/MSG END/")
+    cont = input("Would you like to convert another string? [y/n] ")
+  elif m0 == 'e':
+    print('Bye!')
+    # give option to clear screen
+    exit()
+# This si redundant , given the while loop above
+#else:
+#  print(m0 + " is not a valid option!")
+#  m0 = input("Select a valid option: ")
+  if cont != 'y':
+    break
+print('Bye!')
+exit()
+
+
+
   
 # code here to choose if quit or another input
 
