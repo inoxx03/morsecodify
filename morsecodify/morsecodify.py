@@ -35,7 +35,8 @@ print ("Welcome to Morsecodify v0.1 - the simple text-to-morse code translator p
 print ('What would you like to do?\nType:\n(c) - Convert text to Morse code\n(e) - Exit')
 
 # main menu
-m0 = input('Select option and press ENTER: ')
+# m0 = input('Select option and press ENTER: ')
+# add 3rd option - 'n' - display notes, info
 
 def validate_choice(m0):
   if m0 == 'c':
@@ -46,8 +47,9 @@ def validate_choice(m0):
 
 while True:
   try:
-      m0 = str(input("Select option: "))
-      if validate_choice(m0): break
+      m0 = str(input("Select option and press Enter: "))
+      if validate_choice(m0):
+        break
   except ValueError:
       print ("Invalid option!")
 
