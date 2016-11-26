@@ -59,7 +59,7 @@ while True:
     msg = input("Input Text: ")
     morse = morsecodify(msg)
     print("Your Message in Morse Code:")
-    print("/MSG START/ " + morse + "/MSG END/")
+    print("\n" + morse + "\n")
     cont = input("Would you like to convert another string? [y/n] ")
   elif m0 == 'e':
     print('Bye!')
@@ -77,5 +77,5 @@ exit()
 
 
   
-# code here to choose if quit or another input
+# add support for message-to-textfile exporting
 
