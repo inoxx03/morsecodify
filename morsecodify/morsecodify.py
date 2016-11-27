@@ -72,7 +72,9 @@ while True:
   elif m0 == 'e':
     print('Bye!')
     exit()
-  if cont == 'n' != 'y':
+  if cont != 'y' and cont != 'n':
+    cont = str(input("Press 'y' for YES or 'n' for NO! "))
+  if cont == 'n':
     break
 print('Bye!')
 # sys.exit()
