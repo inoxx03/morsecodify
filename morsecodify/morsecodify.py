@@ -2,6 +2,10 @@
 # Morse Code Dictionary
 # make this able to process a dictionary from separate txt file
 # TODO: add support for US, Continental (requires non-latin chars) and ITU MC varieties
+
+# imported modules:
+#import sys
+
 CODE = {'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..', 'E': '.',
           'F': '..-.',  'G': '--.',   'H': '....',  'I': '..',  'J': '.---', 
           'K': '-.-',   'L': '.-..',  'M': '--',    'N': '-.',  'O': '---', 
@@ -21,6 +25,7 @@ CODE = {'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..', 'E': '.',
           '+':'.-.-.', '!': '-.-.--'
     }
 
+# make entries keyError proof
 #function that converts text to morse code    
 def morsecodify(msg):
   msg = msg.upper() #convert message to uppercase
@@ -43,7 +48,10 @@ def validate_choice(m0):
       return True
   elif m0 == 'e':
       return True
-  return False
+  elif m0 != 'e' != 'c':
+      print("Invalid Option! Press (c) to convert or (e) to exit.")
+      return False
+
 
 while True:
   try:
@@ -54,27 +62,25 @@ while True:
       print ("Invalid option!")
 
 while True:
-# make this go back to taking input if no valid input is given
+# add method to handle KeyError exceptions
   if m0 == 'c':
     msg = input("Input Text: ")
     morse = morsecodify(msg)
     print("Your Message in Morse Code:")
     print("\n" + morse + "\n")
-    cont = input("Would you like to convert another string? [y/n] ")
+    cont = str(input("Would you like to convert another string? [y/n] "))
   elif m0 == 'e':
     print('Bye!')
-    # give option to clear screen
     exit()
-# This si redundant , given the while loop above
-#else:
-#  print(m0 + " is not a valid option!")
-#  m0 = input("Select a valid option: ")
-  if cont != 'y':
+  if cont == 'n' != 'y':
     break
 print('Bye!')
+# sys.exit()
 exit()
 
-
+"""
+comment out a block
+"""
 
   
 # add support for message-to-textfile exporting
