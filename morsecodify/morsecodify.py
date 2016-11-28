@@ -3,8 +3,10 @@
 # make this able to process a dictionary from separate txt file
 # TODO: add support for US, Continental (requires non-latin chars) and ITU MC varieties
 
+#!usr/bin/python
 # imported modules:
 #import sys
+
 
 CODE = {'A': '.-',    'B': '-...',  'C': '-.-.',  'D': '-..', 'E': '.',
           'F': '..-.',  'G': '--.',   'H': '....',  'I': '..',  'J': '.---', 
@@ -43,6 +45,13 @@ print ('What would you like to do?\nType:\n(c) - Convert text to Morse code\n(e)
 # m0 = input('Select option and press ENTER: ')
 # add 3rd option - 'n' - display notes, info
 
+"""
+def validate_exit():
+  if cont not in ('y', 'n'):
+    cont = str(input("Would you like to convert another string? [y/n] ")
+  return;
+"""
+
 def validate_choice(m0):
   if m0 == 'c':
       return True
@@ -51,7 +60,6 @@ def validate_choice(m0):
   elif m0 != 'e' != 'c':
       print("Invalid Option! Press (c) to convert or (e) to exit.")
       return False
-
 
 while True:
   try:
@@ -69,11 +77,10 @@ while True:
     print("Your Message in Morse Code:")
     print("\n" + morse + "\n")
     cont = str(input("Would you like to convert another string? [y/n] "))
+#    validate_exit(cont)
   elif m0 == 'e':
     print('Bye!')
     exit()
-  if cont != 'y' and cont != 'n':
-    cont = str(input("Press 'y' for YES or 'n' for NO! "))
   if cont == 'n':
     break
 print('Bye!')
